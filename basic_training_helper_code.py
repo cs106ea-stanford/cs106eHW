@@ -249,6 +249,7 @@ def change_network(network_type="Linear Regression"):
         network = MyLinearRegressionNetwork()
     else:
         network = MyBasicNetwork()
+    network.to(device)
     optimizer = optim.SGD(network.parameters(), lr=LEARNING_RATE)
 
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
